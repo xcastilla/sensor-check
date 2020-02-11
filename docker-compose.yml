@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  server:
+    build:
+      context: server
+    depends_on: 
+      - mongo
+    environment:
+      - MONGO_URL=mongo:27017
+    networks:
+      - housecheck-net    
+  mongo:
+      image: 'mongo:latest'
+      container_name: 'mongo'
+      ports:
+        - '27100:27017'
+      networks:
+        - housecheck-net
+
+networks:
+  housecheck-net:
+    driver: bridge
