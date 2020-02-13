@@ -12,6 +12,11 @@ services:
   mongo:
       image: 'mongo:latest'
       container_name: 'mongo'
+      env_file:
+        - dbconfig/.env
+      volumes:
+        - ./server/data/mongodb/db:/data/db
+        - ./docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d
       ports:
         - '27100:27017'
       networks:
