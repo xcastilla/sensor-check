@@ -5,8 +5,8 @@ services:
       context: server
     depends_on: 
       - mongo
-    environment:
-      - MONGO_URL=mongo:27017
+    env_file:
+      - dbconfig/.env
     networks:
       - housecheck-net    
   mongo:
