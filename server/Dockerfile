@@ -1,9 +1,10 @@
 FROM golang:latest
+RUN go get go.mongodb.org/mongo-driver/mongo
 
 WORKDIR workspace
 COPY . .
 # Download dependencies and build
-RUN go get gopkg.in/mgo.v2
-RUN go build -o main data/mongo.go
+RUN go build -o main main.go
 
 CMD ["./main"]
+
