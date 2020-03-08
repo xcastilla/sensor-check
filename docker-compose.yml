@@ -9,6 +9,10 @@ services:
       - dbconfig/.env
     networks:
       - housecheck-net    
+    expose:
+        - "8080"
+    ports:
+        - '8080:8080'
   mongo:
       image: 'mongo:latest'
       container_name: 'mongo'
