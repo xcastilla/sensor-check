@@ -1,6 +1,5 @@
 set -Eeuo pipefail
  
-# https://github.com/docker-library/mongo/blob/master/docker-entrypoint.sh#L303
 if [ "$MONGO_INITDB_USERNAME" ] && [ "$MONGO_INITDB_PASSWORD" ]; then
     "${mongo[@]}" -u "$MONGO_INITDB_ROOT_USERNAME" -p "$MONGO_INITDB_ROOT_PASSWORD" --authenticationDatabase "$rootAuthDatabase" "$MONGO_INITDB_DATABASE" <<-EOJS
         db.createUser({

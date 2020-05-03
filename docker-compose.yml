@@ -8,7 +8,7 @@ services:
     env_file:
       - dbconfig/.env
     networks:
-      - housecheck-net    
+      - sensorcheck-net
     expose:
         - "8080"
     ports:
@@ -24,8 +24,8 @@ services:
       ports:
         - '27100:27017'
       networks:
-        - housecheck-net
+        - sensorcheck-net
 
 networks:
-  housecheck-net:
+  sensorcheck-net:
     driver: bridge

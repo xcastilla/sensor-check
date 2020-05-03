@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"./data"
 	"net/http"
 	"log"
 	"time"
+
+	"./data"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
